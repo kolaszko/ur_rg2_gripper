@@ -1,7 +1,9 @@
 # ur_rg2_gripper
 
 ## Examples
-$ rostopic pub /gripper/command std_msgs/Stng 'close'
-$ rostopic pub /gripper/command std_msgs/Stng 'open'
-$ rostopic pub /gripper/command std_msgs/Stng 'softGrip'
-$ rostopic pub /gripper/command std_msgs/Stng 'strongGrip'
+```sh
+$ rostopic pub /gripper/command std_msgs/String 'close'
+$ rostopic pub /gripper/command std_msgs/String 'open'
+$ rostopic pub /gripper/command std_msgs/String 'softGrip'
+$ rostopic pub /gripper/command std_msgs/String 'strongGrip'
+```
