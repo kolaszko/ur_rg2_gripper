@@ -1,32 +1,31 @@
 #!/usr/bin/env python
 
 import rospy
-from gripper import Gripper
+from gripper_erc import GripperErc
 from std_msgs.msg import String
 
 
-class GripperRG2Node:
+class GripperErcNode:
 
     def __init__(self, service='/ur_driver/set_io'):
-        self.gripper = Gripper(service)
+        self.gripper = GripperErc(service)
         rospy.init_node('gripper_node', anonymous=True)
         self.subscriber = rospy.Subscriber('/gripper/command', String, self.callback, queue_size=1)
         self.time_wait = 0
         print('Created gripper_node')
         rospy.spin()
 
-
     def callback(self, data):
         if data.data == 'open':
             self.gripper.open()
+        elif data.data == 'semi_open':
+            self.gripper.semi_open()
+        elif data.data == 'semi_close':
+            self.gripper.semi_close()
         elif data.data == 'close':
             self.gripper.close()
-        elif data.data == 'softGrip':
-            self.gripper.set_soft_grip()
-        elif data.data == 'strongGrip':
-            self.gripper.set_strong_grip()
 
 
 if __name__ == '__main__':
-    node = GripperRG2Node()
-        
+    node = GripperErcNode()
+
