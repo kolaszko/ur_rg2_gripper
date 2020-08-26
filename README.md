@@ -4,6 +4,6 @@
 ```sh
 $ rostopic pub /gripper/command std_msgs/String 'close'
 $ rostopic pub /gripper/command std_msgs/String 'open'
-$ rostopic pub /gripper/command std_msgs/String 'softGrip'
-$ rostopic pub /gripper/command std_msgs/String 'strongGrip'
+$ rostopic pub /gripper/command std_msgs/String 'semi_open'
+$ rostopic pub /gripper/command std_msgs/String 'semi_close'
 ```
