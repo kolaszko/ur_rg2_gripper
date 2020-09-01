@@ -13,10 +13,10 @@ class GripperErc(Gripper):
 
     def semi_open(self):
         self.set_io(1, 16, 0)
-        self.set_io(1, 17, 0)
+        self.set_io(1, 17, 1)
 
     def semi_close(self):
-        self.set_io(1, 16, 0)
+        self.set_io(1, 16, 1)
         self.set_io(1, 17, 0)
 
     def close(self):
