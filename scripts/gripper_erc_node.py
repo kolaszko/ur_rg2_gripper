@@ -7,7 +7,7 @@ from std_msgs.msg import String
 
 class GripperErcNode:
 
-    def __init__(self, service='/ur_driver/set_io'):
+    def __init__(self, service='/ur_hardware_interface/set_io'):
         self.gripper = GripperErc(service)
         rospy.init_node('gripper_node', anonymous=True)
         self.subscriber = rospy.Subscriber('/gripper/command', String, self.callback, queue_size=1)
